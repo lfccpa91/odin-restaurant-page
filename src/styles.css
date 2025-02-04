@@ -1,0 +1,42 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-image: url("./background.jpg");
+}
+
+body #content {
+    padding-left: 20px;
+}
+
+header {
+    background-color: #09a79f;
+    height: 60px;
+    box-shadow: 0 3px 3px rgb(204, 204, 204);
+    display:grid;
+    /*grid-template-columns: repeat(100px, 4);*/
+    justify-content: center;
+    align-content: center;
+    position: sticky;
+    top:0;
+}
+
+nav button {
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+}
+
+img.main {
+    width: 500px;
+    justify-self: center;
+    border-radius: 20px;
+}
+
+body p {
+    background-color: #09a79f;
+    color: white;
+    border-radius: 10px;
+    text-wrap: true;
+    max-width: 500px;
+    padding: 10px;
+}

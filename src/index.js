@@ -1,6 +1,8 @@
 import "./styles.css";
 console.log("Index.js Open");
 import { generateHomePage} from "./home.js";
+import {generateMenu} from "./menu.js";
+
 generateHomePage();
 
 const homeButton = document.querySelector("button#homeButton");
@@ -15,6 +17,7 @@ homeButton.addEventListener("click", () => {
 
 menuButton.addEventListener("click", () => {
     contentDiv.innerHTML = "";
+    generateMenu();
 });
 
 contactButton.addEventListener("click", () => {

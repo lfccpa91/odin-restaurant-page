@@ -4,7 +4,7 @@ body {
     background-image: url("./background.jpg");
 }
 
-body #content {
+body div#content {
     padding-left: 20px;
 }
 

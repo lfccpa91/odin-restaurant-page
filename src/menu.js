@@ -15,12 +15,15 @@ import hawaiianIce from "./food/hawaiianIce.jpg";
 
 export function generateMenu() {
     const content = document.querySelector("div#content");
-    const menuElements = [];
+    const mainSection = [];
+    const sideSection = [];
+    const drinkSection = [];
     function generateCard(name, description, price, image) {
         const newCard = document.createElement("div");
         newCard.classList.add("menuCard");
         const newImage = document.createElement("img");
         newImage.src = image;
+        newImage.classList.add("menuPic");
         newCard.appendChild(newImage);
         const newName = document.createElement("h2");
         newName.textContent = name;
@@ -39,24 +42,46 @@ export function generateMenu() {
         return newSection;
     }
 
-    menuElements.push(sectionHeader("Main Dishes"));
-    menuElements.push(generateCard("Katsu Chicken", "Crispy breaded chicken with our signature tangy sauce", "$9.25", katsuChicken));
-    menuElements.push(generateCard("Teriyaki Chicken", "Succulent grilled chicken with our sweet and savory teriyaki sauce", "$8.15", teriyakiChicken));
-    menuElements.push(generateCard("Kalua Pork", "Melt in your mouth pork slow cooked in a traditional imu oven, served over cabbage", "$8.75",kaluaPork));
-    menuElements.push(generateCard("Teriyaki Beef", "Marinated beef grilled to perfection", "$11.50", teriyakiBeef));
-    menuElements.push(generateCard("Mahi Mahi", "Tender grilled Mahi Mahi fillet with our honey teriyaki glaze", "$12.50", mahiMahi));
-    menuElements.push(generateCard("Poke Bowl", "Diced raw ahi tuna served over vegetables with our honey teriyaki glaze", "$10.50", poke));
-    menuElements.push(sectionHeader("Sides and Salads"));
-    menuElements.push(generateCard("Macaroni Salad", "Fahu's secret recipe!", "$2.50", macSalad));
-    menuElements.push(generateCard("Spinach Salad", "Spinach, almonds, and our sweet hawaiian dressing", "$5.00", spinachSalad));
-    menuElements.push(generateCard("White Rice", "Sticky white rice, 2 scoops", "$1.25", whiteRice));
-    menuElements.push(generateCard("Brown Rice", "Long-grain brown rice, 2 scoops", "$2.25", brownRice));
-    menuElements.push(sectionHeader("Drinks"));
-    menuElements.push(generateCard("POG Juice", "Fresh pineapple orange guava juice, an island favorite", "$2.15", pog));
-    menuElements.push(generateCard("Coconut Water", "Cococut water with a hint of lime", "$1.75", coconutWater));
-    menuElements.push(generateCard("Hawaiian Ice", "Shaved ice with your choice of flavoring, topped with evaporated milk and coconut shavings", "$4.60", hawaiianIce));
+    const mainHeader = sectionHeader("Main Dishes");
+    mainSection.push(generateCard("Katsu Chicken", "Crispy breaded chicken with our signature tangy sauce", "$9.25", katsuChicken));
+    mainSection.push(generateCard("Teriyaki Chicken", "Succulent grilled chicken with our sweet and savory teriyaki sauce", "$8.15", teriyakiChicken));
+    mainSection.push(generateCard("Kalua Pork", "Melt in your mouth pork slow cooked in a traditional imu oven, served over cabbage", "$8.75",kaluaPork));
+    mainSection.push(generateCard("Teriyaki Beef", "Marinated beef grilled to perfection", "$11.50", teriyakiBeef));
+    mainSection.push(generateCard("Mahi Mahi", "Tender grilled Mahi Mahi fillet with our honey teriyaki glaze", "$12.50", mahiMahi));
+    mainSection.push(generateCard("Poke Bowl", "Diced raw ahi tuna served over vegetables with our honey teriyaki glaze", "$10.50", poke));
+    const sidesHeader = sectionHeader("Sides and Salads");
+    sideSection.push(generateCard("Macaroni Salad", "Fahu's secret recipe!", "$2.50", macSalad));
+    sideSection.push(generateCard("Spinach Salad", "Spinach, almonds, and our sweet hawaiian dressing", "$5.00", spinachSalad));
+    sideSection.push(generateCard("White Rice", "Sticky white rice, 2 scoops", "$1.25", whiteRice));
+    sideSection.push(generateCard("Brown Rice", "Long-grain brown rice, 2 scoops", "$2.25", brownRice));
+    const drinksHeader = sectionHeader("Drinks");
+    drinkSection.push(generateCard("POG Juice", "Fresh pineapple orange guava juice, an island favorite", "$2.15", pog));
+    drinkSection.push(generateCard("Coconut Water", "Cococut water with a hint of lime", "$1.75", coconutWater));
+    drinkSection.push(generateCard("Hawaiian Ice", "Shaved ice with your choice of flavoring, topped with evaporated milk and coconut shavings", "$4.60", hawaiianIce));
 
-    menuElements.forEach((element) => {
-        content.appendChild(element);
+    content.appendChild(mainHeader);
+    const mainGrid = document.createElement("div");
+    mainGrid.classList.add("contentGrid");
+    mainSection.forEach((card) => {
+        mainGrid.appendChild(card);
     });
+    content.appendChild(mainGrid);
+    content.appendChild(sidesHeader);
+    const sideGrid = document.createElement("div");
+    sideGrid.classList.add("contentGrid");
+    sideSection.forEach((card) => {
+        sideGrid.appendChild(card);
+    });
+    content.appendChild(sideGrid);
+    content.appendChild(drinksHeader);
+    const drinkGrid = document.createElement("div");
+    drinkGrid.classList.add("contentGrid");
+    drinkSection.forEach((card) => {
+        drinkGrid.appendChild(card);
+    });
+    content.appendChild(drinkGrid);
+    
+
+
+
 }

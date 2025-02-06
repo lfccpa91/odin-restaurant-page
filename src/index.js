@@ -2,6 +2,7 @@ import "./styles.css";
 console.log("Index.js Open");
 import { generateHomePage} from "./home.js";
 import {generateMenu} from "./menu.js";
+import {generateContact} from "./contact.js";
 
 generateHomePage();
 
@@ -22,4 +23,5 @@ menuButton.addEventListener("click", () => {
 
 contactButton.addEventListener("click", () => {
     contentDiv.innerHTML = "";
+    generateContact();
 });

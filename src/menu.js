@@ -15,6 +15,7 @@ import hawaiianIce from "./food/hawaiianIce.jpg";
 
 export function generateMenu() {
     const content = document.querySelector("div#content");
+    content.className = "";
     const mainSection = [];
     const sideSection = [];
     const drinkSection = [];
@@ -32,6 +33,7 @@ export function generateMenu() {
         newDescription.textContent = description;
         newCard.appendChild(newDescription);
         const newPrice = document.createElement("div");
+        newPrice.classList.add("price");
         newPrice.textContent = price;
         newCard.appendChild(newPrice);
         return newCard;

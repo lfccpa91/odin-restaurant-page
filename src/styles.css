@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
     margin: 0px;
-    padding: 0px;
+    padding: 0 0 20px 0;
     background-image: url("./background.jpg");
+    font-family: "Fira Sans", Georgia, sans-serif;
 }
 
 body div#content {
     padding-left: 20px;
+    align-items: center;
+    align-content: center;
 }
 
 div#content h1 {
@@ -18,17 +23,26 @@ header {
     height: 60px;
     box-shadow: 0 3px 3px rgb(204, 204, 204);
     display:grid;
-    /*grid-template-columns: repeat(100px, 4);*/
     justify-content: center;
     align-content: center;
     position: sticky;
     top:0;
 }
 
+
+
 nav button {
-    background-color: black;
-    color: white;
+    background-color: white;  
+    color: #ff9025;
     border-radius: 4px;
+    padding: 5px;
+    border-style: none;
+    font-weight: bold;
+}
+
+nav button:hover {
+    background-color: #ff9025;
+    color: white;
 }
 
 img.main {
@@ -37,7 +51,7 @@ img.main {
     border-radius: 20px;
 }
 
-body p {
+div#content > p {
     background-color: #09a79f;
     color: white;
     border-radius: 10px;
@@ -48,16 +62,58 @@ body p {
 
 img.menuPic {
     height: 250px;
-    border-radius: 15px;
+    border-radius: 10px;
     border-style: solid;
-    border-width: thick;
-    border-color: #09a79f;
-    justify-self: center;
+    border-width: 3px;
+    border-color: white;
+
+
 }
 
 div.contentGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 10px;
 }
 
+div.menuCard {
+    background-color: #09a79f;
+    color: white;
+    justify-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+}
+
+div.menuCard:hover {
+    box-shadow: 5px 5px 5px grey;
+    background-color: #09a79fc3;
+}
+
+div.menuCard p {
+    font-style: italic;
+    
+}
+
+div.price {
+    justify-self: right;
+    font-size: 2rem;
+}
+
+div.contact div {
+    background-color: hsla(22, 26%, 92%, 0.766);
+    width: 400px;
+    padding: 2.5px;
+    font-weight: bold;
+    color: #09a79f;
+}
+
+div.contact h2, div.contact h3 {
+    color: black;
+}
+
+div.contact p {
+    font-style: italic;
+}

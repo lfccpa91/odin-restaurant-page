@@ -26,5 +26,7 @@ export function generateContact() {
     elements.forEach((element) => {
         content.appendChild(element);
     });
+    content.className = "";
+    content.classList.add("contact")
 
 }
